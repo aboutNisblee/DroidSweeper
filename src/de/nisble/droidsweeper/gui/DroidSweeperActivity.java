@@ -32,6 +32,7 @@ import de.nisble.droidsweeper.config.Level;
 import de.nisble.droidsweeper.config.ApplicationConfig;
 import de.nisble.droidsweeper.game.Game;
 import de.nisble.droidsweeper.game.GameObserver;
+import de.nisble.droidsweeper.game.Position;
 import de.nisble.droidsweeper.game.database.DSDBAdapter;
 import de.nisble.droidsweeper.game.replay.Player;
 import de.nisble.droidsweeper.game.replay.PlayerObserver;
@@ -40,7 +41,6 @@ import de.nisble.droidsweeper.gui.grid.FieldDrawables;
 import de.nisble.droidsweeper.gui.grid.FieldView;
 import de.nisble.droidsweeper.gui.grid.GameGridLayout;
 import de.nisble.droidsweeper.utilities.LogDog;
-import de.nisble.droidsweeper.utilities.Position;
 
 /** Main-Activity
  * @author Moritz Nisblé moritz.nisble@gmx.de */
@@ -94,7 +94,7 @@ public class DroidSweeperActivity extends Activity {
 		ApplicationConfig.INSTANCE.init(this).load();
 		LogDog.i(CLASSNAME, "ApplicationConfig loaded: " + ApplicationConfig.INSTANCE.toString());
 
-		Game.INSTANCE.addListener(mGameObserver);
+		Game.INSTANCE.addObserver(mGameObserver);
 
 		if (ApplicationConfig.INSTANCE.isShowInstructions() == true)
 			showDialog(FIRSTSTART_DIALOG);
@@ -245,7 +245,7 @@ public class DroidSweeperActivity extends Activity {
 				 * Call it via a passed FieldConnector interface. */
 				try {
 					if (replay)
-						mPlayer.addFieldListener(field);
+						mPlayer.setFieldListener(field);
 					else
 						Game.INSTANCE.setFieldListener(field);
 				} catch (Exception e) {

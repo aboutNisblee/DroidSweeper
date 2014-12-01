@@ -2,7 +2,7 @@ package de.nisble.droidsweeper.game.replay;
 
 import java.io.Serializable;
 
-import de.nisble.droidsweeper.utilities.Field;
+import de.nisble.droidsweeper.game.Field;
 
 /** This class holds changes of field states that occur during one
  * time step (typically one click).

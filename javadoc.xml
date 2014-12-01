@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="javadoc">
+    <target name="javadoc">
+        <javadoc access="public" author="true" classpath="." destdir="doc/javadoc" nodeprecated="false" nodeprecatedlist="false" noindex="false" nonavbar="false" notree="false" packagenames="de.nisble.droidsweeper.game.database,de.nisble.droidsweeper.gui.grid,de.nisble.droidsweeper.utilities,de.nisble.droidsweeper.config,de.nisble.droidsweeper.game.replay,de.nisble.droidsweeper.game.jni,de.nisble.droidsweeper.game,de.nisble.droidsweeper.gui" source="1.7" sourcefiles="gen/de/nisble/droidsweeper/R.java,gen/de/nisble/droidsweeper/BuildConfig.java" sourcepath="src:gen" splitindex="true" use="true" version="true">
+            <link href="http://developer.android.com/reference/packages.html"/>
+        </javadoc>
+    </target>
+</project>

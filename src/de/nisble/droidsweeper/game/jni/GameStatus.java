@@ -3,9 +3,20 @@ package de.nisble.droidsweeper.game.jni;
 import de.nisble.droidsweeper.utilities.LogDog;
 
 /** Mapping of msm::GAMESTATUS
+ * <ul>
+ * <li>Serializable: Do not change this class!</li>
+ * </ul>
  * @author Moritz Nisblé moritz.nisble@gmx.de */
 public enum GameStatus {
-	READY(0), RUNNING(1), WON(2), LOST(3);
+	/** Created but not started (i.e. no click was made) */
+	READY(0),
+	/** Game is currently running. */
+	RUNNING(1),
+	/** Game is ended and won. */
+	WON(2),
+	/** Game is ended and lost. */
+	LOST(3);
+
 	final int value;
 
 	private static final String CLASSNAME = GameStatus.class.getSimpleName();
@@ -14,10 +25,10 @@ public enum GameStatus {
 		value = v;
 	}
 
-	/** Get the GameStatus for the corresponding integer.
-	 * @param i
-	 *            primitive integer (int)
-	 * @return The difficulty level */
+	/** Get the GameStatus for the corresponding integer.<br>
+	 * The value defaults to READY when the given number is invalid.
+	 * @param i The value.
+	 * @return The corresponding status. */
 	public static GameStatus fromInt(int i) {
 		GameStatus temp;
 		try {

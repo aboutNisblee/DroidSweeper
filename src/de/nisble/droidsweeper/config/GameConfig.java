@@ -11,7 +11,11 @@ import android.os.Parcelable;
  * accordingly.
  * It is also able to adapt the dimensions of the game grid to the
  * current orientation of the device. This is simply done by switching the sides
- * of the game grid. The class is immutable and parcelable!
+ * of the game grid.
+ * <ul>
+ * <li>Immutable: Members are public final and capitalized.</li>
+ * <li>Parcelable: Can e.g. passed as extra to an intent.</li>
+ * </ul>
  * @author Moritz Nisblé moritz.nisble@gmx.de */
 public final class GameConfig implements Parcelable {
 	public final Level LEVEL;

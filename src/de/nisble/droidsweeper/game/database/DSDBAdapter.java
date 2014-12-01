@@ -48,7 +48,7 @@ public final class DSDBAdapter {
 	 * @throws Exception On unknown difficulty. */
 	public ArrayList<DSDBGameEntry> getGames(Level level) throws Exception {
 		if (Level.CUSTOM == level) {
-			throw new Exception("No database entries for custom difficulty levels");
+			throw new IllegalArgumentException("No database entries for custom difficulty levels");
 		}
 
 		ArrayList<DSDBGameEntry> result = new ArrayList<DSDBGameEntry>();
@@ -94,7 +94,7 @@ public final class DSDBAdapter {
 						.getColumnIndexOrThrow(GamesView.CN_TIME)), c.getLong(c
 						.getColumnIndexOrThrow(GamesView.CN_DATE)), null);
 			} else {
-				throw new Exception("Unable to query replay for ID " + gameID);
+				throw new IllegalArgumentException("Unable to query replay for ID " + gameID);
 			}
 		} finally {
 			c.close();
@@ -111,7 +111,7 @@ public final class DSDBAdapter {
 	 * @return A new entry including the replay data. */
 	public DSDBGameEntry getReplay(DSDBGameEntry entry) throws Exception {
 		if (Level.CUSTOM == entry.LEVEL) {
-			throw new Exception("No database entries for custom difficulty levels");
+			throw new IllegalArgumentException("No database entries for custom difficulty levels");
 		}
 
 		DSDBGameEntry result = null;
@@ -126,7 +126,7 @@ public final class DSDBAdapter {
 				result = new DSDBGameEntry(entry.GAMEID, entry.LEVEL, entry.NAME, entry.PLAYTIME, entry.EPOCHTIME,
 						c.getBlob(c.getColumnIndex(GameTable.CN_REPLAY)));
 			} else {
-				throw new Exception("Unable to query replay for ID " + entry.GAMEID);
+				throw new IllegalArgumentException("Unable to query replay for ID " + entry.GAMEID);
 			}
 		} finally {
 			c.close();
@@ -141,7 +141,7 @@ public final class DSDBAdapter {
 	 * @return True on insert, else false. */
 	public boolean isHighScore(Level level, long milliseconds) throws Exception {
 		if (Level.CUSTOM == level) {
-			throw new Exception("No database entries for custom difficulty levels");
+			throw new IllegalArgumentException("No database entries for custom difficulty levels");
 		}
 
 		boolean result = false;
@@ -220,9 +220,9 @@ public final class DSDBAdapter {
 	 * @return The ID of the inserted game. */
 	public long insertTime(Replay replay) throws Exception {
 		if (Level.CUSTOM == replay.getGameConfig().LEVEL) {
-			throw new Exception("No database entries for custom difficulty levels");
+			throw new IllegalArgumentException("No database entries for custom difficulty levels");
 		} else if (0 == replay.getName().length()) {
-			throw new Exception("No player name set!");
+			throw new IllegalArgumentException("No player name set!");
 		}
 
 		ContentValues values = new ContentValues();

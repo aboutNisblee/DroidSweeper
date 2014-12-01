@@ -24,8 +24,6 @@ public class Timer {
 		STOPPED, RUNNING, PAUSED
 	}
 
-	/* Member */
-
 	private static final String CLASSNAME = Timer.class.getSimpleName();
 
 	private long mPeriod = 20;
@@ -61,8 +59,6 @@ public class Timer {
 			}
 		}
 	};
-
-	/* Interface */
 
 	/** Add a listener.
 	 * @param l A listener. */
@@ -152,13 +148,6 @@ public class Timer {
 
 	public boolean isPaused() {
 		return mStatus == STATUS.PAUSED;
-	}
-
-	/** Get current tick count.
-	 * @return Tick count. */
-	@Deprecated
-	public long getTicks() {
-		return mTicks;
 	}
 
 	/** Get elapsed milliseconds.

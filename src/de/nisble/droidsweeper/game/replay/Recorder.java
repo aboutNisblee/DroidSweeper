@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import de.nisble.droidsweeper.config.GameConfig;
+import de.nisble.droidsweeper.game.Field;
+import de.nisble.droidsweeper.game.Position;
 import de.nisble.droidsweeper.game.jni.FieldStatus;
 import de.nisble.droidsweeper.game.jni.GameStatus;
 import de.nisble.droidsweeper.game.jni.MatrixObserver;
-import de.nisble.droidsweeper.utilities.Field;
 import de.nisble.droidsweeper.utilities.LogDog;
-import de.nisble.droidsweeper.utilities.Position;
 
 public class Recorder implements MatrixObserver {
 	private final String CLASSNAME = Recorder.class.getSimpleName();

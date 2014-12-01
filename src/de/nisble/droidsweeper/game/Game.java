@@ -15,10 +15,18 @@ import de.nisble.droidsweeper.game.replay.Recorder;
 import de.nisble.droidsweeper.game.replay.Replay;
 import de.nisble.droidsweeper.utilities.Timer;
 import de.nisble.droidsweeper.utilities.LogDog;
-import de.nisble.droidsweeper.utilities.Position;
 import de.nisble.droidsweeper.utilities.Timer.TimerObserver;
 import static de.nisble.droidsweeper.config.Constants.*;
 
+/** This class implements the game logic.<br>
+ * It completely abstracts the game procedure and has no dependencies to the
+ * view. View classes should implement the {@link GameObserver observer
+ * interface} to get update on important changes of the internal status of the
+ * game.
+ * <p>
+ * <b>Singleton: Use the public final INSTANCE member.</b>
+ * </p>
+ * @author Moritz Nisblé moritz.nisble@gmx.de */
 public class Game implements MatrixObserver, TimerObserver {
 	private final String CLASSNAME = Game.class.getSimpleName();
 
@@ -42,7 +50,7 @@ public class Game implements MatrixObserver, TimerObserver {
 
 	/** Add an observer.
 	 * @param l Observer. */
-	public void addListener(GameObserver l) {
+	public void addObserver(GameObserver l) {
 		// Avoid multiple entries of the same object.
 		if (!mObservers.contains(l))
 			mObservers.add(l);
@@ -54,10 +62,14 @@ public class Game implements MatrixObserver, TimerObserver {
 		mObservers.remove(l);
 	}
 
+	/** @return The currently loaded {@link GameConfig}. */
 	public GameConfig getGameConfig() {
 		return mConfig;
 	}
 
+	/** This function only return true when a new game was created but not
+	 * started (i.e. no click was made).
+	 * @return True if the game is in {@link GameStatus#RUNNING} state. */
 	@Deprecated
 	public boolean isOrientationChangeable() {
 		return (MineSweeperMatrix.INSTANCE.isReady());

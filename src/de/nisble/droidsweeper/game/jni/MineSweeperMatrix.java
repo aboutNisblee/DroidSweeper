@@ -4,11 +4,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 import de.nisble.droidsweeper.config.GameConfig;
-import de.nisble.droidsweeper.utilities.Position;
+import de.nisble.droidsweeper.game.Position;
 
+/** Abstraction of the native library libmsm that implements the game logic.
+ * <ul>
+ * <li>Singleton: Use the public INSTANCE member.</li>
+ * </ul>
+ * @author Moritz Nisblé moritz.nisble@gmx.de */
 public final class MineSweeperMatrix {
 	private static final String CLASSNAME = MineSweeperMatrix.class.getSimpleName();
 
+	/** Get the one and only instance of this class. */
 	public static final MineSweeperMatrix INSTANCE = new MineSweeperMatrix();
 
 	private List<MatrixObserver> observer = new ArrayList<MatrixObserver>();

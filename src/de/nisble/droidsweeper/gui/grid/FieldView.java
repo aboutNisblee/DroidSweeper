@@ -3,11 +3,11 @@ package de.nisble.droidsweeper.gui.grid;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.ImageView;
+import de.nisble.droidsweeper.game.Field;
+import de.nisble.droidsweeper.game.Position;
 import de.nisble.droidsweeper.game.jni.FieldListener;
 import de.nisble.droidsweeper.game.jni.FieldStatus;
-import de.nisble.droidsweeper.utilities.Field;
 import de.nisble.droidsweeper.utilities.LogDog;
-import de.nisble.droidsweeper.utilities.Position;
 
 public class FieldView extends ImageView implements FieldListener {
 	private static final String CLASSNAME = FieldView.class.getSimpleName();

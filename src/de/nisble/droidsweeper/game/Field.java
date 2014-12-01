@@ -1,16 +1,29 @@
-package de.nisble.droidsweeper.utilities;
+package de.nisble.droidsweeper.game;
 
 import java.io.Serializable;
 
 import de.nisble.droidsweeper.game.jni.FieldStatus;
 
+/** Serializable container that abstracts the preferences of a field.<br>
+ * <p>
+ * <b>Immutable: Members are public final and capitalized.<br>
+ * Serializable: Do not change this class!</b>
+ * </p>
+ * @author Moritz Nisblé moritz.nisble@gmx.de */
 public final class Field implements Serializable {
 	private static final long serialVersionUID = 1L;
-	
+
+	/** The position. */
 	public final Position POSITION;
+	/** The current status. */
 	public final FieldStatus STATUS;
+	/** The count of adjacent bombs. */
 	public final int ADJACENT_BOMBS;
 
+	/** Instantiate a new Field.
+	 * @param position The position.
+	 * @param status The status (mapped from libmsm).
+	 * @param adjacentBombs The count of adjacent bombs. */
 	public Field(Position position, FieldStatus status, int adjacentBombs) {
 		POSITION = position;
 		STATUS = status;

@@ -6,6 +6,11 @@ import android.widget.TableLayout;
 
 public class GameGridLayout extends TableLayout {
 
+	/*
+	 * TODO: Transform to GameGridView.
+	 * Manage the Overlay here!
+	 */
+
 	public int iAnzahl_x = 1;
 	public int iAnzahl_y = 1;
 

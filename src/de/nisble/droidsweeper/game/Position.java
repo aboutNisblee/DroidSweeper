@@ -1,19 +1,30 @@
-package de.nisble.droidsweeper.utilities;
+package de.nisble.droidsweeper.game;
 
 import java.io.Serializable;
 
-/** Helper that stores the position of a filed in a matrix.
+/** Helper that stores the position of a filed in a matrix.<br>
+ * <p>
+ * <b>Immutable: Members are public final and capitalized.</b>
+ * <b></b>
+ * </p>
  * @author Moritz Nisblé moritz.nisble@gmx.de */
 public final class Position implements Serializable {
 	private static final long serialVersionUID = 1L;
+
+	/** The horizontal coordinate. */
 	public final int X;
+	/** The vertical coordinate. */
 	public final int Y;
 
+	/** Initialize with invalid coordinates (-1,-1). */
 	public Position() {
 		X = -1;
 		Y = -1;
 	}
 
+	/** Initialize with the given coordinates.
+	 * @param x The horizontal coordinate.
+	 * @param y The vertical coordinate. */
 	public Position(int x, int y) {
 		X = x;
 		Y = y;

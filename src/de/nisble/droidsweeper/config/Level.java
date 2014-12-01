@@ -4,10 +4,39 @@ import de.nisble.droidsweeper.utilities.LogDog;
 import static de.nisble.droidsweeper.config.Constants.*;
 
 /** Available difficulty levels.
+ * <ul>
+ * <li>Immutable: Members are public final and capitalized.</li>
+ * <li>Serializable: Do not change this class!</li>
+ * </ul>
  * @author Moritz Nisblé moritz.nisble@gmx.de */
 public enum Level {
-	EASY(EASY_X, EASY_Y, EASY_BOMBS), NORMAL(NORMAL_X, NORMAL_Y, NORMAL_BOMBS), HARD(HARD_X, HARD_Y, HARD_BOMBS), CUSTOM(
-			0, 0, 0);
+	/** Difficulty level easy.
+	 * Dimensions and bombs are defined by:
+	 * <ul>
+	 * <li>{@link Constants#EASY_X}</li>
+	 * <li>{@link Constants#EASY_Y}</li>
+	 * <li>{@link Constants#EASY_BOMBS}</li>
+	 * </ul> */
+	EASY(EASY_X, EASY_Y, EASY_BOMBS),
+	/** Difficulty level easy.
+	 * Dimensions and bombs are defined by:
+	 * <ul>
+	 * <li>{@link Constants#NORMAL_X}</li>
+	 * <li>{@link Constants#NORMAL_Y}</li>
+	 * <li>{@link Constants#NORMAL_BOMBS}</li>
+	 * </ul> */
+	NORMAL(NORMAL_X, NORMAL_Y, NORMAL_BOMBS),
+	/** Difficulty level easy.
+	 * Dimensions and bombs are defined by:
+	 * <ul>
+	 * <li>{@link Constants#HARD_X}</li>
+	 * <li>{@link Constants#HARD_Y}</li>
+	 * <li>{@link Constants#HARD_BOMBS}</li>
+	 * </ul> */
+	HARD(HARD_X, HARD_Y, HARD_BOMBS),
+	/** Difficulty level easy.
+	 * Dimensions and bombs are set to 0. */
+	CUSTOM(0, 0, 0);
 
 	private static final String CLASSNAME = Level.class.getSimpleName();
 
