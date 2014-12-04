@@ -14,7 +14,7 @@ import android.widget.TableLayout;
  *
  */
 class GameGridLayout2 extends TableLayout {
-	private static final String CLASSNAME = GameGridLayout.class.getSimpleName();
+	private static final String CLASSNAME = GameGridView.class.getSimpleName();
 
 	private float mCurrentOffsetX = 0;
 	private float mCurrentOffsetY = 0;

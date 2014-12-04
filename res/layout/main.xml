@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:droidsweeper="http://schemas.android.com/apk/res/de.nisble.droidsweeper"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical" >
@@ -30,36 +31,15 @@
             android:gravity="center" />
     </LinearLayout>
 
-    <RelativeLayout
+    <de.nisble.droidsweeper.gui.grid.GameGridView
+        android:id="@+id/gameGrid"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/background_lightGray" >
-
-        <de.nisble.droidsweeper.gui.grid.GameGridLayout
-            android:id="@+id/gameGrid"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:padding="2dip" />
-
-        <RelativeLayout
-            android:id="@+id/overlayLayout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/background_lightGray_transparent"
-            android:clickable="false"
-            android:visibility="invisible" >
-
-            <TextView
-                android:id="@+id/overlayText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:clickable="false"
-                android:gravity="center"
-                android:textColor="@android:color/black"
-                android:textSize="26sp" />
-        </RelativeLayout>
-    </RelativeLayout>
+        android:background="@color/background_lightGray"
+        android:padding="2dip"
+        droidsweeper:hasOverlay="true"
+        droidsweeper:overlayBackgroundColor="@color/background_lightGray_transparent"
+        droidsweeper:overlayTextColor="@android:color/black"
+        droidsweeper:overlayTextSize="26sp" />
 
 </LinearLayout>

@@ -3,7 +3,6 @@ package de.nisble.droidsweeper.game.database;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
-import java.io.OptionalDataException;
 import java.util.ArrayList;
 import java.util.List;
 

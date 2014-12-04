@@ -16,13 +16,8 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.View.OnLongClickListener;
-import android.view.ViewGroup.LayoutParams;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.RelativeLayout;
-import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 import de.nisble.droidsweeper.R;
@@ -32,14 +27,13 @@ import de.nisble.droidsweeper.config.Level;
 import de.nisble.droidsweeper.config.ApplicationConfig;
 import de.nisble.droidsweeper.game.Game;
 import de.nisble.droidsweeper.game.GameObserver;
-import de.nisble.droidsweeper.game.Position;
 import de.nisble.droidsweeper.game.database.DSDBAdapter;
 import de.nisble.droidsweeper.game.replay.Player;
 import de.nisble.droidsweeper.game.replay.PlayerObserver;
 import de.nisble.droidsweeper.game.replay.Replay;
 import de.nisble.droidsweeper.gui.grid.FieldDrawables;
 import de.nisble.droidsweeper.gui.grid.FieldView;
-import de.nisble.droidsweeper.gui.grid.GameGridLayout;
+import de.nisble.droidsweeper.gui.grid.GameGridView;
 import de.nisble.droidsweeper.utilities.LogDog;
 
 /** Main-Activity
@@ -47,11 +41,8 @@ import de.nisble.droidsweeper.utilities.LogDog;
 public class DroidSweeperActivity extends Activity {
 	private static final String CLASSNAME = DroidSweeperActivity.class.getSimpleName();
 
-	private TextView mOverlayText;
-	private RelativeLayout mOverlayLayout;
-
 	private Button mBtNewGame;
-	private GameGridLayout mGameGrid;
+	private GameGridView mGameGrid;
 	private TextView mTimeLabel;
 	private TextView mBombCounter;
 
@@ -71,15 +62,12 @@ public class DroidSweeperActivity extends Activity {
 
 		setContentView(R.layout.main);
 
-		mOverlayText = (TextView) findViewById(R.id.overlayText);
-		mOverlayLayout = (RelativeLayout) findViewById(R.id.overlayLayout);
-
 		mBtNewGame = (Button) findViewById(R.id.btNewGame);
 		mBtNewGame.setText(R.string.newGame);
 		mBtNewGame.setOnClickListener(onNewGameClicked);
 
-		mGameGrid = (GameGridLayout) findViewById(R.id.gameGrid);
-		mGameGrid.setShrinkAllColumns(true);
+		mGameGrid = (GameGridView) findViewById(R.id.gameGrid);
+		mGameGrid.setFieldClickListener(mFieldClickListener);
 
 		mTimeLabel = (TextView) findViewById(R.id.tvTime);
 		mBombCounter = (TextView) findViewById(R.id.tvBombs);
@@ -87,7 +75,7 @@ public class DroidSweeperActivity extends Activity {
 		FieldDrawables.loadGrayback(this);
 
 		mVibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
-		
+
 		// Open database
 		DSDBAdapter.INSTANCE.open(this);
 		// Load application config
@@ -192,73 +180,33 @@ public class DroidSweeperActivity extends Activity {
 		return super.onOptionsItemSelected(item);
 	}
 
-	/* TODO: Add a GridView and move this code into it.
-	 * Use an interface "FieldConnector" and pass it into
-	 * this method. Implement one FieldConnector for connecting
-	 * the Player and one for a real game. */
-	private void buildGrid(GameConfig c, boolean replay) {
-		mOverlayLayout.setVisibility(View.INVISIBLE);
-
-		// XXX: Get a orientation corrected version of the config
-		GameConfig cv = c.adjustOrientation(this);
-
-		mGameGrid.removeAllViews();
-		mGameGrid.setDimensions(cv.X, cv.Y);
-
-		for (int y = 0; y < cv.Y; y++) {
-			TableRow row = new TableRow(getApplicationContext());
-
-			// XXX: ???
-			row.setId(100 + y);
-
-			row.setLayoutParams(new GameGridLayout.LayoutParams(LayoutParams.WRAP_CONTENT, 0));
-			mGameGrid.addView(row);
-
-			for (int x = 0; x < cv.X; x++) {
-
-				FieldView field = new FieldView(getApplicationContext());
-				field.setLayoutParams(new TableRow.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
-				field.setAdjustViewBounds(true);
-				field.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
-
-				/* NOTE: Game and Replay only know one layout.
-				 * The view corrects the orientation.
-				 * The Positions in the Fields remain in the PORTRAIT layout.
-				 * Cause the position of the fields is queried via
-				 * FieldListener.getPosition()
-				 * mapping to libmsmS and PlayerS matrix is no problem.
-				 * This is the only place where we have to transpose the
-				 * matrix! */
-				if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE)
-					field.setPosition(new Position(y, c.Y - 1 - x));
-				else
-					field.setPosition(new Position(x, y));
-
-				field.setOnClickListener(onFieldClicked);
-
-				field.setLongClickable(true);
-				field.setOnLongClickListener(onLongFiledClicked);
-
-				row.addView(field);
-
-				/* This should be moved out.
-				 * Call it via a passed FieldConnector interface. */
-				try {
-					if (replay)
-						mPlayer.setFieldListener(field);
-					else
-						Game.INSTANCE.setFieldListener(field);
-				} catch (Exception e) {
-					LogDog.e(CLASSNAME, e.getMessage(), e);
-				}
+	private GameGridView.FieldWidgetConnector mGameConnector = new GameGridView.FieldWidgetConnector() {
+		@Override
+		public void connect(FieldView field) {
+			try {
+				Game.INSTANCE.setFieldListener(field);
+			} catch (Exception e) {
+				LogDog.e(CLASSNAME, e.getMessage(), e);
 			}
 		}
-	}
+	};
+
+	private GameGridView.FieldWidgetConnector mReplayConnector = new GameGridView.FieldWidgetConnector() {
+		@Override
+		public void connect(FieldView field) {
+			try {
+				mPlayer.setFieldListener(field);
+			} catch (Exception e) {
+				LogDog.e(CLASSNAME, e.getMessage(), e);
+			}
+		}
+	};
 
 	private final GameObserver mGameObserver = new GameObserver() {
 		@Override
 		public void onBuildGrid(GameConfig config) {
-			buildGrid(config, false);
+			mGameGrid.hideOverlay();
+			mGameGrid.newGrid(config, mGameConnector);
 		}
 
 		@Override
@@ -277,7 +225,7 @@ public class DroidSweeperActivity extends Activity {
 				if (highscore) {
 					showDialog(WIN_DIALOG);
 				} else {
-					showOverlayMsg(getString(R.string.wonMsg) + "\n" + getString(R.string.badTimeMsg));
+					mGameGrid.showOverlay(getString(R.string.wonMsg) + "\n" + getString(R.string.badTimeMsg));
 
 					if (ApplicationConfig.INSTANCE.isReplayOnLost()) {
 						// Load the current game into the player
@@ -286,13 +234,13 @@ public class DroidSweeperActivity extends Activity {
 					}
 				}
 			} else {
-				showOverlayMsg(getString(R.string.wonMsg) + "\n" + getString(R.string.customGameMsg));
+				mGameGrid.showOverlay(getString(R.string.wonMsg) + "\n" + getString(R.string.customGameMsg));
 			}
 		}
 
 		@Override
 		public void onLost(long milliseconds) {
-			showOverlayMsg(getString(R.string.lostMsg));
+			mGameGrid.showOverlay(getString(R.string.lostMsg));
 
 			if (ApplicationConfig.INSTANCE.isReplayOnLost()) {
 				// Load the current game into the player
@@ -305,7 +253,8 @@ public class DroidSweeperActivity extends Activity {
 	private final PlayerObserver mReplayObserver = new PlayerObserver() {
 		@Override
 		public void onBuildGrid(GameConfig config) {
-			buildGrid(config, true);
+			mGameGrid.hideOverlay();
+			mGameGrid.newGrid(config, mReplayConnector);
 		}
 
 		@Override
@@ -478,25 +427,18 @@ public class DroidSweeperActivity extends Activity {
 		}
 	}
 
-	private void showOverlayMsg(String str) {
-		mOverlayText.setText(str);
-		mOverlayLayout.setVisibility(View.VISIBLE);
-	}
-
-	private final OnClickListener onFieldClicked = new OnClickListener() {
+	private final GameGridView.FieldClickListener mFieldClickListener = new GameGridView.FieldClickListener() {
 		@Override
-		public void onClick(View v) {
-			Game.INSTANCE.revealField(((FieldView) v).getPosition());
+		public void onClick(FieldView field) {
+			Game.INSTANCE.revealField(field.getPosition());
 		}
-	};
 
-	private final OnLongClickListener onLongFiledClicked = new OnLongClickListener() {
 		@Override
-		public boolean onLongClick(View v) {
+		public boolean onLongClick(FieldView field) {
 			// TODO: Make vibration (and time) configurable
-			// TODO: Mark with double click 
+			// TODO: Mark with double click
 			mVibrator.vibrate(100);
-			Game.INSTANCE.cycleMark(((FieldView) v).getPosition());
+			Game.INSTANCE.cycleMark(field.getPosition());
 			return true;
 		}
 	};

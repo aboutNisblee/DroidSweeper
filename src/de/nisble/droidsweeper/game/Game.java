@@ -30,6 +30,7 @@ import static de.nisble.droidsweeper.config.Constants.*;
 public class Game implements MatrixObserver, TimerObserver {
 	private final String CLASSNAME = Game.class.getSimpleName();
 
+	/** The instance. */
 	public static final Game INSTANCE = new Game();
 
 	private GameConfig mConfig = new GameConfig(Level.EASY);

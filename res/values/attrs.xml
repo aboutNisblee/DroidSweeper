@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="GameGridView">
+		<attr name="hasOverlay" format="boolean" />
+		<attr name="overlayTextSize" format="dimension" />
+		<attr name="overlayTextColor" format="reference|color" />
+		<attr name="overlayBackgroundColor" format="reference|color" />
+    </declare-styleable>
+
+</resources>
