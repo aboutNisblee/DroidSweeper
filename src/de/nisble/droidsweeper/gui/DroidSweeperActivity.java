@@ -206,7 +206,7 @@ public class DroidSweeperActivity extends Activity {
 		@Override
 		public void onBuildGrid(GameConfig config) {
 			mGameGrid.hideOverlay();
-			mGameGrid.newGrid(config, mGameConnector);
+			mGameGrid.update(config, mGameConnector);
 		}
 
 		@Override
@@ -254,7 +254,7 @@ public class DroidSweeperActivity extends Activity {
 		@Override
 		public void onBuildGrid(GameConfig config) {
 			mGameGrid.hideOverlay();
-			mGameGrid.newGrid(config, mReplayConnector);
+			mGameGrid.update(config, mReplayConnector);
 		}
 
 		@Override

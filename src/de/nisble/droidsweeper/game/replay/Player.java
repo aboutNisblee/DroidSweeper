@@ -127,7 +127,7 @@ public class Player implements TimerObserver {
 				/* Let the view build the game grid. */
 				l.onBuildGrid(mReplay.getGameConfig());
 			}
-			mTimer.start(TIMER_PERIOD, 1000);
+			mTimer.start(TIMER_PERIOD);
 		}
 	}
 

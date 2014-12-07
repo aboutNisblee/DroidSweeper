@@ -20,22 +20,16 @@ public class FieldView extends ImageView implements FieldListener {
 	}
 
 	public FieldView(Context context) {
-		super(context);
-		init();
+		this(context, null);
 	}
 
 	public FieldView(Context context, AttributeSet attrs) {
 		this(context, attrs, 0);
-		init();
 	}
 
 	public FieldView(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
 		init();
-	}
-
-	public void setPosition(Position p) {
-		mField = new Field(p, mField.STATUS, mField.ADJACENT_BOMBS);
 	}
 
 	@Override
@@ -45,6 +39,11 @@ public class FieldView extends ImageView implements FieldListener {
 
 	public FieldStatus getFieldStatus() {
 		return mField.STATUS;
+	}
+
+	public void reset(Position p) {
+		mField = new Field(p, FieldStatus.HIDDEN, 0);
+		setImageDrawable(FieldDrawables.getDrawable(mField.STATUS, 0));
 	}
 
 	/* (non-Javadoc)
