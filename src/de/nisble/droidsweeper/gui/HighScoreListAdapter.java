@@ -71,6 +71,7 @@ public class HighScoreListAdapter extends BaseAdapter {
 			view = (LinearLayout) mLayoutInflater.inflate(R.layout.layout_timelist_item, parent, false);
 		}
 
+		// TODO: Remove redundant Position item!
 		((TextView) view.findViewById(R.id.tvTimeListItem_Position)).setText(String.valueOf(position + 1));
 		((TextView) view.findViewById(R.id.tvTimeListItem_Name)).setText(entries.get(position).NAME);
 		((TextView) view.findViewById(R.id.tvTimeListItem_Time)).setText(DateFormat.format("mm:ss",

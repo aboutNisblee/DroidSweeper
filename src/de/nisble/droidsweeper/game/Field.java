@@ -5,10 +5,10 @@ import java.io.Serializable;
 import de.nisble.droidsweeper.game.jni.FieldStatus;
 
 /** Serializable container that abstracts the preferences of a field.<br>
- * <p>
- * <b>Immutable: Members are public final and capitalized.<br>
- * Serializable: Do not change this class!</b>
- * </p>
+ * <ul>
+ * <li>Immutable: Members are public final and capitalized.</li>
+ * <li>Serializable: Do not change this class!</li>
+ * </ul>
  * @author Moritz Nisblé moritz.nisble@gmx.de */
 public final class Field implements Serializable {
 	private static final long serialVersionUID = 1L;

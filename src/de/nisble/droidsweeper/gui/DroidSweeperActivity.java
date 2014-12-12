@@ -78,8 +78,8 @@ public class DroidSweeperActivity extends Activity {
 
 		// Open database
 		DSDBAdapter.INSTANCE.open(this);
-		// Load application config
-		ApplicationConfig.INSTANCE.init(this).load();
+		// Load config from disk
+		GameConfig c = ApplicationConfig.INSTANCE.init(this).load();
 		LogDog.i(CLASSNAME, "ApplicationConfig loaded: " + ApplicationConfig.INSTANCE.toString());
 
 		Game.INSTANCE.addObserver(mGameObserver);
@@ -90,7 +90,7 @@ public class DroidSweeperActivity extends Activity {
 		mPlayer.addObserver(mReplayObserver);
 
 		// Start game with the GameConfig loaded from persistent memory
-		Game.INSTANCE.start(ApplicationConfig.INSTANCE.getGameConfig());
+		Game.INSTANCE.start(c);
 	}
 
 	// @Override
@@ -114,12 +114,14 @@ public class DroidSweeperActivity extends Activity {
 	protected void onPause() {
 		mPlayer.pause();
 		Game.INSTANCE.pause();
+
+		ApplicationConfig.INSTANCE.store(Game.INSTANCE.getGameConfig());
+
 		super.onPause();
 	}
 
 	@Override
 	protected void onDestroy() {
-		ApplicationConfig.INSTANCE.store(Game.INSTANCE.getGameConfig());
 		DSDBAdapter.INSTANCE.close();
 		super.onDestroy();
 	}
@@ -352,6 +354,7 @@ public class DroidSweeperActivity extends Activity {
 	}
 
 	/* This is called before onResume!
+	 *
 	 * @see android.app.Activity#onActivityResult(int, int,
 	 * android.content.Intent) */
 	@Override

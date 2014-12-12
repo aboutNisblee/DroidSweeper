@@ -16,7 +16,7 @@ import de.nisble.droidsweeper.utilities.LogDog;
 import de.nisble.droidsweeper.utilities.Timer;
 import de.nisble.droidsweeper.utilities.Timer.TimerObserver;
 
-/** Replay player.<br>
+/** {@link Replay} player.<br>
  * This class is used to show a game {@link Replay} that was loaded from the
  * database or {@link Recorder recorded} right before. The key feature of this
  * program to update the field widgets directly from native code makes showing a
@@ -34,7 +34,8 @@ import de.nisble.droidsweeper.utilities.Timer.TimerObserver;
  * Inside this method the view should create the game grid just as if the call
  * comes from {@link Game}. But rather than registering the field widgets in the
  * Game, the widgets should be registered here.
- * @author Moritz Nisblé moritz.nisble@gmx.de */
+ * @author Moritz Nisblé moritz.nisble@gmx.de
+ * @see {@link Recorder} for how to record a replay. */
 public class Player implements TimerObserver {
 	private final String CLASSNAME = Player.class.getSimpleName();
 
@@ -103,6 +104,7 @@ public class Player implements TimerObserver {
 		mState = STOPPED;
 		mTimer.stop();
 
+		// Make an internal copy
 		mReplay = new Replay(replay);
 
 		mFlMatrix = new FieldListener[mReplay.getGameConfig().X][mReplay.getGameConfig().Y];
