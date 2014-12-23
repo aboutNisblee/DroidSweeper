@@ -54,6 +54,7 @@ public class DroidSweeperActivity extends Activity {
 	private static final int REPLAY_AGAIN_DIALOG = 2;
 	private static final int FIRSTSTART_DIALOG = 3;
 
+	// Replay player
 	private Player mPlayer = new Player();
 
 	@Override
@@ -93,22 +94,12 @@ public class DroidSweeperActivity extends Activity {
 		Game.INSTANCE.start(c);
 	}
 
-	// @Override
-	// protected void onRestoreInstanceState(Bundle savedInstanceState) {
-	// super.onRestoreInstanceState(savedInstanceState);
-	// }
-
 	@Override
 	protected void onResume() {
 		mPlayer.resume();
 		Game.INSTANCE.resume();
 		super.onResume();
 	}
-
-	// @Override
-	// protected void onSaveInstanceState(Bundle outState) {
-	// super.onSaveInstanceState(outState);
-	// }
 
 	@Override
 	protected void onPause() {
@@ -182,6 +173,8 @@ public class DroidSweeperActivity extends Activity {
 		return super.onOptionsItemSelected(item);
 	}
 
+	/* Callback that is passed to GameGridView.update() to connect the field
+	 * views to the native library. */
 	private GameGridView.FieldWidgetConnector mGameConnector = new GameGridView.FieldWidgetConnector() {
 		@Override
 		public void connect(FieldView field) {
@@ -193,6 +186,8 @@ public class DroidSweeperActivity extends Activity {
 		}
 	};
 
+	/* Callback that is passed to GameGridView.update() to connect the field
+	 * views to the replay player. */
 	private GameGridView.FieldWidgetConnector mReplayConnector = new GameGridView.FieldWidgetConnector() {
 		@Override
 		public void connect(FieldView field) {
@@ -354,7 +349,6 @@ public class DroidSweeperActivity extends Activity {
 	}
 
 	/* This is called before onResume!
-	 *
 	 * @see android.app.Activity#onActivityResult(int, int,
 	 * android.content.Intent) */
 	@Override

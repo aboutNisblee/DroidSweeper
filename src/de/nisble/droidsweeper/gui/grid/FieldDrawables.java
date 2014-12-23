@@ -6,12 +6,16 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 
+/** Class that holds images for the {@link FieldView}.
+ * @author Moritz Nisblé moritz.nisble@gmx.de */
 public class FieldDrawables {
 	// private static final String CLASSNAME =
 	// FieldDrawables.class.getSimpleName();
 
 	private static final Drawable[] mImages = new Drawable[13];
 
+	/** Load standard {@link FieldView} theme.
+	 * @param context Application context. */
 	public static void loadGrayback(Context context) {
 		Resources res = context.getResources();
 
@@ -31,6 +35,12 @@ public class FieldDrawables {
 		mImages[12] = res.getDrawable(R.drawable.pushedbomb_grayback_round_1);
 	}
 
+	/** Get an image corresponding to a specific {@link FieldStatus}.
+	 * If {@link FieldStatus#UNHIDDEN} is passed, the adjacentBombs argument
+	 * specifies the number shown on the revealed field.
+	 * @param status The field status.
+	 * @param adjacentBombs The count of adjacent bombs.
+	 * @return A Drawable. */
 	public static Drawable getDrawable(FieldStatus status, int adjacentBombs) {
 		switch (status) {
 		case HIDDEN:

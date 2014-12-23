@@ -15,7 +15,7 @@ import de.nisble.droidsweeper.game.database.DSDBAdapter;
 import de.nisble.droidsweeper.game.database.DSDBGameEntry;
 import de.nisble.droidsweeper.utilities.LogDog;
 
-/** MultiListActivity for showing the highscores.
+/** MultiListActivity for showing the highscores.<br>
  * @author Moritz Nisblé moritz.nisble@gmx.de */
 public class HighScoreActivity extends Activity {
 	private static final String CLASSNAME = HighScoreActivity.class.getSimpleName();
@@ -41,7 +41,7 @@ public class HighScoreActivity extends Activity {
 
 				/* Fetch list entries from database and put it into
 				 * HighScoreListAdapter. */
-				l.setAdapter(new HighScoreListAdapter(this, DSDBAdapter.INSTANCE.getGames(LEVELS[i])));
+				l.setAdapter(new HighScoreListAdapter(getApplicationContext(), DSDBAdapter.INSTANCE.getGames(LEVELS[i])));
 
 				l.setOnItemClickListener(onClickListener);
 			}
@@ -61,6 +61,7 @@ public class HighScoreActivity extends Activity {
 					.getAdapter()).getWrappedAdapter()).getItem((int) id);
 
 			Intent intent = getIntent();
+			// TODO: Use a constant!
 			intent.putExtra("GAMEID", entry.GAMEID);
 
 			setResult(INTENTRESULT_PLAY_REPLAY, intent);

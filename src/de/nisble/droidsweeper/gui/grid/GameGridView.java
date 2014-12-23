@@ -15,26 +15,58 @@ import android.widget.TextView;
 import de.nisble.droidsweeper.R;
 import de.nisble.droidsweeper.config.GameConfig;
 import de.nisble.droidsweeper.game.Position;
+import de.nisble.droidsweeper.game.jni.FieldStatus;
+import de.nisble.droidsweeper.game.jni.MineSweeperMatrix;
 import de.nisble.droidsweeper.utilities.LogDog;
 
+/** This class abstracts the logic that is needed to correctly arrange the
+ * {@link FieldView field widgets} in a table (called the game grid).
+ * It is an extension of the ViewGroup RelativeLayout thats attributes can be
+ * used in a XML-File to specify the LayoutParms of this view. Internally a
+ * TableLayout is used to arrange the {@link FieldView field widgets}. Use the
+ * {@link #update(GameConfig, FieldWidgetConnector)} method to build a new grid.
+ * The field widgets of the last grid are recycled if possible.<br>
+ * For the user to be able to connect the field widgets to different classes
+ * that can update the {@link FieldStatus} of the widgets, a
+ * {@link FieldWidgetConnector} must be passed to
+ * {@link #update(GameConfig, FieldWidgetConnector)}. From inside this callback
+ * the user should connect the field widget to e.g.
+ * {@link MineSweeperMatrix#setFieldListener(de.nisble.droidsweeper.game.jni.FieldListener)}
+ * or another instance that should update the status of the field widgets.<br>
+ * Also, the user should pass an implementation of {@link FieldClickListener} to
+ * {@link #setFieldClickListener(FieldClickListener)}. Clicks on the field
+ * widgets are passed to the methods of that interface.
+ * @author Moritz Nisblé moritz.nisble@gmx.de */
 public class GameGridView extends RelativeLayout {
 	private static final String CLASSNAME = GameGridView.class.getSimpleName();
 
+	/** Interface that should be passed to
+	 * {@link GameGridView#update(GameConfig, FieldWidgetConnector)}.
+	 * @author Moritz Nisblé moritz.nisble@gmx.de */
 	public interface FieldWidgetConnector {
-		// http://steve-yegge.blogspot.de/2006/03/execution-in-kingdom-of-nouns.html
+		/** <a href=
+		 * "http://steve-yegge.blogspot.de/2006/03/execution-in-kingdom-of-nouns.html"
+		 * >Execution in the Kingdom of Nouns</a> */
 		void connect(FieldView field);
 	}
 
+	/** Interface that is invoked on clicks to the {@link FieldView field
+	 * widgets}.
+	 * @author Moritz Nisblé moritz.nisble@gmx.de */
 	public interface FieldClickListener {
+		/** Invoked on click to a {@link FieldView}
+		 * @param field The {@link FieldView} that was clicked. */
 		void onClick(FieldView field);
 
-		/** @return true if the callback consumed the long click, false
+		/** Invoked on long click to a {@link FieldView}.
+		 * @param field The {@link FieldView} that was long clicked.
+		 * @return true if the callback consumed the long click, false
 		 *         otherwise. */
 		boolean onLongClick(FieldView field);
 	}
 
 	private class GridLayout extends TableLayout {
-		public GridLayout(Context context, AttributeSet attrs) {
+		private GridLayout(Context context, AttributeSet attrs) {
 			super(context, attrs);
 		}
 
@@ -67,15 +99,15 @@ public class GameGridView extends RelativeLayout {
 	}
 
 	private final GridLayout mGrid;
-
 	private TextView mOverlayText = null;
-
 	private FieldClickListener mFieldClickListener = null;
 
+	/** Constructor. */
 	public GameGridView(Context context) {
 		this(context, null);
 	}
 
+	/** Constructor. */
 	public GameGridView(Context context, AttributeSet attrs) {
 		super(context, attrs);
 
@@ -118,10 +150,22 @@ public class GameGridView extends RelativeLayout {
 		bringChildToFront(mGrid);
 	}
 
+	/** Register a {@link FieldClickListener} thats methods are invoked on clicks
+	 * to the {@link FieldView field widgets}.
+	 * @param l An instance of a {@link FieldClickListener}. */
 	public void setFieldClickListener(FieldClickListener l) {
 		mFieldClickListener = l;
 	}
 
+	/** Update the game grid to the dimensions passed in the given
+	 * {@link GameConfig}. The dimensions of the grid are adjusted to the
+	 * orientation of the device.
+	 * @param config The new {@link GameConfig}.
+	 * @param connector A callback that is responsible for connecting the
+	 *            {@link FieldView field widgets} to a class that is able
+	 *            to update its {@link FieldStatus status} (e.g.
+	 *            {@link MineSweeperMatrix#setFieldListener(de.nisble.droidsweeper.game.jni.FieldListener)}
+	 *            ). */
 	public void update(GameConfig config, FieldWidgetConnector connector) {
 		// Get an orientation corrected version of the config
 		GameConfig cv = config.adjustOrientation(getContext());
@@ -188,7 +232,6 @@ public class GameGridView extends RelativeLayout {
 				 * of the FieldViewS differs from its position in the
 				 * TableLayout. Therefore we have to correct this Position back
 				 * to PORTRAIT, if the Grind was built for LANDSCAPE.
-				 *
 				 * Because the game logic gets the coordinates of each field by
 				 * calling FieldListener.getPosition(), this is the only place
 				 * where we have to consider this. */
@@ -210,6 +253,8 @@ public class GameGridView extends RelativeLayout {
 		requestLayout();
 	}
 
+	/** Bring an overlay with the given text in front.
+	 * @param text The text to show. */
 	public void showOverlay(String text) {
 		if (mOverlayText != null) {
 			mOverlayText.setText(text);
@@ -222,6 +267,7 @@ public class GameGridView extends RelativeLayout {
 		}
 	}
 
+	/** Hide the overlay and bring the game grid in front. */
 	public void hideOverlay() {
 		if (mOverlayText != null) {
 			mOverlayText.setVisibility(INVISIBLE);
@@ -234,7 +280,6 @@ public class GameGridView extends RelativeLayout {
 	}
 
 	private final OnClickListener mOnFieldClick = new OnClickListener() {
-
 		@Override
 		public void onClick(View v) {
 			if (mFieldClickListener != null) {

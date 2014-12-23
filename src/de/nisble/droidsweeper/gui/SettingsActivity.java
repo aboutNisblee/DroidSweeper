@@ -20,6 +20,8 @@ import de.nisble.droidsweeper.config.Level;
 import de.nisble.droidsweeper.config.ApplicationConfig;
 import de.nisble.droidsweeper.utilities.LogDog;
 
+/** Settings activity.
+ * @author Moritz Nisblé moritz.nisble@gmx.de */
 public class SettingsActivity extends Activity {
 	private static final String CLASSNAME = SettingsActivity.class.getSimpleName();
 
@@ -37,6 +39,7 @@ public class SettingsActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
+		// TODO: Use constant!
 		mPassedConfig = getIntent().getParcelableExtra("GameConfig");
 		if (null == mPassedConfig) {
 			LogDog.e(CLASSNAME, "Unable to unpack GameConfig from intent");
