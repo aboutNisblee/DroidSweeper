@@ -236,7 +236,7 @@ public class DroidSweeperActivity extends Activity {
 		}
 
 		@Override
-		public void onLost(long milliseconds) {
+		public boolean onLost(long milliseconds) {
 			mGameGrid.showOverlay(getString(R.string.lostMsg));
 
 			if (ApplicationConfig.INSTANCE.isReplayOnLost()) {
@@ -244,6 +244,9 @@ public class DroidSweeperActivity extends Activity {
 				mPlayer.load(Game.INSTANCE.getReplay());
 				showDialog(REPLAY_DIALOG);
 			}
+
+			// Return true to reveal all fields
+			return true;
 		}
 	};
 

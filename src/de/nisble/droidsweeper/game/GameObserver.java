@@ -30,6 +30,7 @@ public interface GameObserver {
 	void onWon(long milliseconds, boolean highscore);
 
 	/** Called when the game was lost.
-	 * @param milliseconds The playtime in milliseconds. */
-	void onLost(long milliseconds);
+	 * @param milliseconds The playtime in milliseconds.
+	 * @return Return true to reveal all fields, else false. */
+	boolean onLost(long milliseconds);
 }

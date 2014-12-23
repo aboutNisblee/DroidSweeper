@@ -119,7 +119,9 @@ public class Game implements MatrixObserver, TimerObserver {
 			case LOST:
 				mTimer.stop();
 				for (GameObserver l : mObservers) {
-					l.onLost(mTimer.getMilliseconds());
+					if (l.onLost(mTimer.getMilliseconds())) {
+						revealAll();
+					}
 				}
 				break;
 			case READY:
@@ -156,6 +158,17 @@ public class Game implements MatrixObserver, TimerObserver {
 			beforeClick();
 			MineSweeperMatrix.INSTANCE.reveal(p);
 			afterClick(oldStatus, p);
+		}
+	}
+
+	/** Reveal all fields.<br>
+	 * <b>This may fire {@link GameObserver} events like
+	 * {@link GameObserver#onLost(long)}.</b> */
+	public void revealAll() {
+		for (int y = 0; y < mConfig.Y; ++y) {
+			for (int x = 0; x < mConfig.X; ++x) {
+				MineSweeperMatrix.INSTANCE.reveal(new Position(x, y));
+			}
 		}
 	}
 
