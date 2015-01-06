@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <EditText
+        android:id="@+id/editText_nameDialog_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:hint="@string/hint_name"
+        android:inputType="text"
+        android:maxEms="10"
+        android:maxLength="10"
+        android:minEms="3"
+        android:paddingLeft="4dip"
+        android:paddingRight="4dip"
+        android:selectAllOnFocus="true" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:paddingBottom="4dip"
+        android:paddingLeft="4dip"
+        android:paddingRight="4dip"
+        android:paddingTop="4dip"
+        android:weightSum="1" >
+
+        <Button
+            android:id="@+id/bt_nameDialog_OK"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.4"
+            android:gravity="center"
+            android:text="@string/btText_OK" />
+    </LinearLayout>
+
+</LinearLayout>

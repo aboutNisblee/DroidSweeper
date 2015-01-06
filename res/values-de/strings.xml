@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">DroidSweeper</string>
+    <string name="newGame">Neues Spiel</string>
+    <string name="noTime">Keine Einträge</string>
+
+    <string-array name="difficultylevels">
+        <item>Einfach</item>
+        <item>Normal</item>
+        <item>Schwer</item>
+        <item>Benutzerdef.</item>
+    </string-array>
+
+    <string name="Yes">Ja</string>
+    <string name="No">Nein</string>
+    <string name="OK">OK</string>
+    <string name="difficultiy_prompt">Schwierigkeit wählen</string>
+    <string name="easy">Einfach</string>
+    <string name="normal">Normal</string>
+    <string name="hard">Schwer</string>
+    <string name="position">Nr.</string>
+    <string name="name">Name</string>
+    <string name="time">Zeit</string>
+    <string name="date">Datum</string>
+    <string name="gameSettings">SpielEinstellungen</string>
+    <string name="hint_name">Bitte Namen eingeben.</string>
+    <string name="btText_OK">OK</string>
+    <string name="ShowReplayOnLost">Zeige Replay nach Niederlage?</string>
+    <string name="chooseAlevel">Schwierigkeit: </string>
+    <string name="width">Breite</string>
+    <string name="height">Höhe</string>
+    <string name="bombs">Bomben</string>
+    <string name="highscores">Bestzeiten</string>
+    <string name="settings">Einstellungen</string>
+    <string name="congratulations">Herzlichen Glückwunsch</string>
+    <string name="playReplay">Replay abspielen?</string>
+    <string name="playAgain">Erneut abspielen?</string>
+    <string name="lostMsg">Leider verloren</string>
+    <string name="wonMsg">Gewonnen</string>
+    <string name="badTimeMsg">(keine Bestzeit)</string>
+    <string name="customGameMsg">(Benutzerdef. Spiel)</string>
+    <string name="firstStartMsg">Willkommen zu DroidSweeper!\nDieses App ist eine Portierung des allseits bekannten Klassikes MineSweeper von Microsoft.\nEs spielt sich wie das Original. Zum markieren von Bomben müssen Sie ein Feld lange berühren. Bei 2-maligem langen Klicken eines Feldes erscheint eine 2. Markierung (ein ?). Ein so markiertes Feld kann, im Gegensatz zur ersten Markierung, mit einem einfachen Klick aufgedeckt werden.\nErreichen Sie eine Bestzeit (besser als die ersten 10 Zeiten) können Sie das Replay des Spiels jeder Zeit über die Bestenliste wieder abrufen.\nAch ja, das Spielfeld passt sich der Lage des Telefons an.\nSoll heißen, wenn gerade kein Spiel läuft und Sie das Telefon drehen verändern sich die Abmaße des Spielfelds, um die verfügbare Fläche des Displays besser auszunutzen.\nViel Spass\n\nCopyright liegt bei Moritz Nisblé</string>
+    <string name="hint_short_name">Min. 3 Zeichen</string>
+
+</resources>

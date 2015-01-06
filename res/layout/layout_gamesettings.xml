@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollGameSettings"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tvGameSettings_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/darker_gray"
+                android:gravity="center_horizontal"
+                android:text="@string/gameSettings"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dip"
+                android:gravity="center_horizontal" >
+
+                <TextView
+                    android:id="@+id/tvGameSettings_diffSpinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:paddingStart="4dip"
+                    android:paddingEnd="4dip"
+                    android:text="@string/chooseAlevel"
+                    android:textAppearance="@android:style/TextAppearance.Small" />
+
+                <Spinner
+                    android:id="@+id/spinner_difficulty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/difficultylevels"
+                    android:gravity="center_horizontal"
+                    android:prompt="@string/difficultiy_prompt"
+                    android:spinnerMode="dropdown" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dip" >
+
+                <TextView
+                    android:id="@+id/tvWidth"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:text="@string/width"
+                    android:textAppearance="@android:style/TextAppearance.Small" />
+
+                <TextView
+                    android:id="@+id/tvHeight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:text="@string/height"
+                    android:textAppearance="@android:style/TextAppearance.Small" />
+
+                <TextView
+                    android:id="@+id/tvBombs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:text="@string/bombs"
+                    android:textAppearance="@android:style/TextAppearance.Small" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <NumberPicker
+                    android:id="@+id/npWidth"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:focusableInTouchMode="true" />
+
+                <NumberPicker
+                    android:id="@+id/npHeight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:focusableInTouchMode="true" />
+
+                <NumberPicker
+                    android:id="@+id/npBombs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:focusableInTouchMode="true" />
+            </LinearLayout>
+
+            <CheckBox
+                android:id="@+id/cbShowReplayOnLost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_margin="4dip"
+                android:text="@string/ShowReplayOnLost"
+                android:textAppearance="@android:style/TextAppearance.Small" />
+        </LinearLayout>
+</ScrollView>

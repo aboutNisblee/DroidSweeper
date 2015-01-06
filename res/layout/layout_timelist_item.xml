@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="false"
+    android:focusable="false"
+    android:focusableInTouchMode="false"
+    android:showDividers="middle"
+    android:weightSum="2" >
+
+    <TextView
+        android:id="@+id/tvTimeListItem_Position"
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.2"
+        android:gravity="center_horizontal"
+        android:paddingEnd="2dip"
+        android:paddingLeft="6dip"
+        android:paddingRight="2dip"
+        android:paddingStart="6dip" />
+
+    <TextView
+        android:id="@+id/tvTimeListItem_Name"
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.70"
+        android:ellipsize="end"
+        android:gravity="center_horizontal"
+        android:maxLines="1"
+        android:paddingEnd="2dip"
+        android:paddingLeft="2dip"
+        android:paddingRight="2dip"
+        android:paddingStart="2dip" />
+
+    <TextView
+        android:id="@+id/tvTimeListItem_Time"
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.25"
+        android:gravity="center_horizontal"
+        android:paddingEnd="2dip"
+        android:paddingLeft="2dip"
+        android:paddingRight="2dip"
+        android:paddingStart="2dip" />
+
+    <TextView
+        android:id="@+id/tvTimeListItem_Date"
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.85"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="1"
+        android:paddingEnd="6dip"
+        android:paddingLeft="2dip"
+        android:paddingRight="6dip"
+        android:paddingStart="2dip" />
+
+</LinearLayout>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <!-- EASY -->
+
+    <TextView
+        android:id="@+id/tvTimeList_easy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/easy"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <ListView
+        android:id="@+id/lvTimeList_easy"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/tvTimeList_empty_easy"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="@string/noTime" />
+
+    <!-- NORMAL -->
+
+    <TextView
+        android:id="@+id/tvTimeList_normal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/normal"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <ListView
+        android:id="@+id/lvTimeList_normal"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/tvTimeList_empty_normal"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="@string/noTime" />
+
+    <!-- HARD -->
+
+    <TextView
+        android:id="@+id/tvTimeList_hard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/hard"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <ListView
+        android:id="@+id/lvTimeList_hard"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/tvTimeList_empty_hard"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="@string/noTime" />
+
+</LinearLayout>

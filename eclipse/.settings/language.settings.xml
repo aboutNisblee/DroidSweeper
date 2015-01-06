@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project>
+	<configuration id="0.842246185" name="Release">
+		<extension point="org.eclipse.cdt.core.LanguageSettingsProvider">
+			<provider copy-of="extension" id="org.eclipse.cdt.ui.UserLanguageSettingsProvider"/>
+			<provider-reference id="org.eclipse.cdt.core.ReferencedProjectsLanguageSettingsProvider" ref="shared-provider"/>
+			<provider class="org.eclipse.cdt.managedbuilder.language.settings.providers.GCCBuildCommandParser" id="org.eclipse.cdt.managedbuilder.core.GCCBuildCommandParser" keep-relative-paths="false" name="CDT GCC Build Output Parser" parameter=".*?g++" prefer-non-shared="true" store-entries-with-project="true">
+				<language id="org.eclipse.cdt.core.g++">
+					<resource project-relative-path="jni/msm-jni.cpp">
+						<entry kind="includePath" name="/MineSweeperMatrix/src">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/mnt/code/android-ndk-r10c/sources/cxx-stl/llvm-libc++/libcxx/include"/>
+						<entry kind="includePath" name="/mnt/code/android-ndk-r10c/sources/cxx-stl/gabi++/include"/>
+						<entry kind="includePath" name="/mnt/code/android-ndk-r10c/sources/android/support/include"/>
+						<entry kind="includePath" name="/${ProjName}/jni">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/mnt/code/android-ndk-r10c/platforms/android-14/arch-mips/usr/include"/>
+						<entry kind="macro" name="ANDROID" value=""/>
+						<entry kind="macro" name="HAVEBOOST" value="0"/>
+						<entry kind="macro" name="JNIREF" value="1"/>
+					</resource>
+					<resource project-relative-path="src/field.cpp">
+						<entry kind="includePath" name="/MineSweeperMatrix/src">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/mnt/code/android-ndk-r10c/sources/cxx-stl/llvm-libc++/libcxx/include"/>
+						<entry kind="includePath" name="/mnt/code/android-ndk-r10c/sources/cxx-stl/gabi++/include"/>
+						<entry kind="includePath" name="/mnt/code/android-ndk-r10c/sources/android/support/include"/>
+						<entry kind="includePath" name="/${ProjName}/jni">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/mnt/code/android-ndk-r10c/platforms/android-14/arch-mips/usr/include"/>
+						<entry kind="macro" name="ANDROID" value=""/>
+						<entry kind="macro" name="HAVEBOOST" value="0"/>
+						<entry kind="macro" name="JNIREF" value="1"/>
+					</resource>
+					<resource project-relative-path="src/matrix.cpp">
+						<entry kind="includePath" name="/MineSweeperMatrix/src">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/mnt/code/android-ndk-r10c/sources/cxx-stl/llvm-libc++/libcxx/include"/>
+						<entry kind="includePath" name="/mnt/code/android-ndk-r10c/sources/cxx-stl/gabi++/include"/>
+						<entry kind="includePath" name="/mnt/code/android-ndk-r10c/sources/android/support/include"/>
+						<entry kind="includePath" name="/${ProjName}/jni">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/mnt/code/android-ndk-r10c/platforms/android-14/arch-mips/usr/include"/>
+						<entry kind="macro" name="ANDROID" value=""/>
+						<entry kind="macro" name="HAVEBOOST" value="0"/>
+						<entry kind="macro" name="JNIREF" value="1"/>
+					</resource>
+				</language>
+			</provider>
+		</extension>
+	</configuration>
+	<configuration id="0.842246185.1984233242" name="Debug">
+		<extension point="org.eclipse.cdt.core.LanguageSettingsProvider">
+			<provider copy-of="extension" id="org.eclipse.cdt.ui.UserLanguageSettingsProvider"/>
+			<provider-reference id="org.eclipse.cdt.core.ReferencedProjectsLanguageSettingsProvider" ref="shared-provider"/>
+			<provider class="org.eclipse.cdt.managedbuilder.language.settings.providers.GCCBuildCommandParser" id="org.eclipse.cdt.managedbuilder.core.GCCBuildCommandParser" keep-relative-paths="false" name="CDT GCC Build Output Parser" parameter=".*?g++" prefer-non-shared="true" store-entries-with-project="true">
+				<language id="org.eclipse.cdt.core.g++">
+					<resource project-relative-path="jni/msm-jni.cpp">
+						<entry kind="includePath" name="/MineSweeperMatrix/src">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/mnt/code/android-ndk-r10c/sources/cxx-stl/llvm-libc++/libcxx/include"/>
+						<entry kind="includePath" name="/mnt/code/android-ndk-r10c/sources/cxx-stl/gabi++/include"/>
+						<entry kind="includePath" name="/mnt/code/android-ndk-r10c/sources/android/support/include"/>
+						<entry kind="includePath" name="/${ProjName}/jni">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/mnt/code/android-ndk-r10c/platforms/android-14/arch-mips/usr/include"/>
+						<entry kind="macro" name="ANDROID" value=""/>
+						<entry kind="macro" name="HAVEBOOST" value="0"/>
+						<entry kind="macro" name="JNIREF" value="1"/>
+					</resource>
+					<resource project-relative-path="src/field.cpp">
+						<entry kind="includePath" name="/MineSweeperMatrix/src">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/mnt/code/android-ndk-r10c/sources/cxx-stl/llvm-libc++/libcxx/include"/>
+						<entry kind="includePath" name="/mnt/code/android-ndk-r10c/sources/cxx-stl/gabi++/include"/>
+						<entry kind="includePath" name="/mnt/code/android-ndk-r10c/sources/android/support/include"/>
+						<entry kind="includePath" name="/${ProjName}/jni">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/mnt/code/android-ndk-r10c/platforms/android-14/arch-mips/usr/include"/>
+						<entry kind="macro" name="ANDROID" value=""/>
+						<entry kind="macro" name="HAVEBOOST" value="0"/>
+						<entry kind="macro" name="JNIREF" value="1"/>
+					</resource>
+					<resource project-relative-path="src/matrix.cpp">
+						<entry kind="includePath" name="/MineSweeperMatrix/src">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/mnt/code/android-ndk-r10c/sources/cxx-stl/llvm-libc++/libcxx/include"/>
+						<entry kind="includePath" name="/mnt/code/android-ndk-r10c/sources/cxx-stl/gabi++/include"/>
+						<entry kind="includePath" name="/mnt/code/android-ndk-r10c/sources/android/support/include"/>
+						<entry kind="includePath" name="/${ProjName}/jni">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/mnt/code/android-ndk-r10c/platforms/android-14/arch-mips/usr/include"/>
+						<entry kind="macro" name="ANDROID" value=""/>
+						<entry kind="macro" name="HAVEBOOST" value="0"/>
+						<entry kind="macro" name="JNIREF" value="1"/>
+					</resource>
+				</language>
+			</provider>
+		</extension>
+	</configuration>
+</project>

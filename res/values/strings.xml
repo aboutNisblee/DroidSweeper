@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">DroidSweeper</string>
+    <string name="newGame">New Game</string>
+    <string name="noTime">No entries</string>
+
+    <string-array name="difficultylevels">
+        <item>Easy</item>
+        <item>Normal</item>
+        <item>Hard</item>
+        <item>Custom</item>
+    </string-array>
+
+    <string name="Yes">Yes</string>
+    <string name="No">No</string>
+    <string name="OK">OK</string>
+    <string name="difficultiy_prompt">Choose a difficulty</string>
+    <string name="easy">Easy</string>
+    <string name="normal">Normal</string>
+    <string name="hard">Hard</string>
+    <string name="position">No.</string>
+    <string name="name">Name</string>
+    <string name="time">Time</string>
+    <string name="date">Date</string>
+    <string name="gameSettings">GameSettings</string>
+    <string name="hint_name">Pls enter name.</string>
+    <string name="btText_OK">OK</string>
+    <string name="ShowReplayOnLost">Show replay on lost?</string>
+    <string name="chooseAlevel">Choose a Level: </string>
+    <string name="width">Width</string>
+    <string name="height">Height</string>
+    <string name="bombs">Bombs</string>
+    <string name="highscores">Highscores</string>
+    <string name="settings">Settings</string>
+    <string name="congratulations">Congratulations</string>
+    <string name="playReplay">Play Replay?</string>
+    <string name="playAgain">Play again?</string>
+    <string name="lostMsg">Game Over</string>
+    <string name="wonMsg">Won</string>
+    <string name="badTimeMsg">(No highscore)</string>
+    <string name="customGameMsg">(Custom Game)</string>
+    <string name="firstStartMsg">This is just a test of a really long msg and should replaced by a first start msg with an introduction of how to use the app and what hidden features are available!</string>
+    <string name="hint_short_name">Min. 3 characters</string>
+
+</resources>

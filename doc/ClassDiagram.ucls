@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.1.7" icons="true" automaticImage="PNG" always-add-relationships="true" generalizations="true" 
+  realizations="true" associations="true" dependencies="true" nesting-relationships="true">  
+  <class id="1" language="java" name="de.nisble.droidsweeper.game.Game" project="DroidSweeper" 
+    file="/DroidSweeper/src/de/nisble/droidsweeper/game/Game.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="509" width="283" x="661" y="1225"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="de.nisble.droidsweeper.utilities.Timer" project="DroidSweeper" 
+    file="/DroidSweeper/src/de/nisble/droidsweeper/utilities/Timer.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="491" width="214" x="566" y="1784"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="de.nisble.droidsweeper.gui.SettingsActivity" project="DroidSweeper" 
+    file="/DroidSweeper/src/de/nisble/droidsweeper/gui/SettingsActivity.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="347" width="325" x="44" y="694"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="de.nisble.droidsweeper.gui.HighScoreActivity" project="DroidSweeper" 
+    file="/DroidSweeper/src/de/nisble/droidsweeper/gui/HighScoreActivity.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="167" width="199" x="956" y="694"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="de.nisble.droidsweeper.gui.HighScoreListAdapter" project="DroidSweeper" 
+    file="/DroidSweeper/src/de/nisble/droidsweeper/gui/HighScoreListAdapter.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="221" width="317" x="1015" y="1225"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="de.nisble.droidsweeper.game.replay.Replay" project="DroidSweeper" 
+    file="/DroidSweeper/src/de/nisble/droidsweeper/game/replay/Replay.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="383" width="190" x="1124" y="2315"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="de.nisble.droidsweeper.gui.DroidSweeperActivity" project="DroidSweeper" 
+    file="/DroidSweeper/src/de/nisble/droidsweeper/gui/DroidSweeperActivity.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="617" width="240" x="897" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="de.nisble.droidsweeper.gui.grid.FieldView" project="DroidSweeper" 
+    file="/DroidSweeper/src/de/nisble/droidsweeper/gui/grid/FieldView.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="221" width="210" x="1393" y="694"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="de.nisble.droidsweeper.gui.grid.GameGridLayout" project="DroidSweeper" 
+    file="/DroidSweeper/src/de/nisble/droidsweeper/gui/grid/GameGridLayout.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="167" width="212" x="409" y="694"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="de.nisble.droidsweeper.game.replay.TimeStep" project="DroidSweeper" 
+    file="/DroidSweeper/src/de/nisble/droidsweeper/game/replay/TimeStep.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="149" width="159" x="820" y="2738"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="11" language="java" name="de.nisble.droidsweeper.utilities.Field" project="DroidSweeper" 
+    file="/DroidSweeper/src/de/nisble/droidsweeper/utilities/Field.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="203" width="163" x="780" y="2927"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="12" language="java" name="de.nisble.droidsweeper.game.replay.Player" project="DroidSweeper" 
+    file="/DroidSweeper/src/de/nisble/droidsweeper/game/replay/Player.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="491" width="215" x="661" y="694"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="13" language="java" name="de.nisble.droidsweeper.game.replay.Recorder" project="DroidSweeper" 
+    file="/DroidSweeper/src/de/nisble/droidsweeper/game/replay/Recorder.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="311" width="283" x="820" y="1784"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <association id="14">    
+    <bendpoint x="789" y="2315"/>    
+    <bendpoint x="789" y="2738"/>    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="15" name="mStepBuffer">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="16" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="17">    
+    <bendpoint x="1362" y="694"/>    
+    <bendpoint x="1362" y="1225"/>    
+    <bendpoint x="1362" y="1784"/>    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="6"/>  
+  </dependency>  
+  <dependency id="18">    
+    <bendpoint x="514" y="1225"/>    
+    <bendpoint x="514" y="1784"/>    
+    <bendpoint x="514" y="2315"/>    
+    <bendpoint x="514" y="2738"/>    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="11"/>  
+  </dependency>  
+  <dependency id="19">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="4"/>  
+  </dependency>  
+  <association id="20">    
+    <bendpoint x="984" y="1225"/>    
+    <bendpoint x="1154" y="1784"/>    
+    <end type="SOURCE" refId="12" navigable="false">      
+      <attribute id="21" name="mReplay">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="22" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="23">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="24" name="INSTANCE">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="25" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="26">    
+    <bendpoint x="829" y="2315"/>    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="10"/>  
+  </dependency>  
+  <association id="27">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="28" name="mRecorder">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="29" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="13" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="30">    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="31" name="STEPS">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="32" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="33">    
+    <bendpoint x="1383" y="1225"/>    
+    <bendpoint x="1383" y="1784"/>    
+    <bendpoint x="1383" y="2315"/>    
+    <bendpoint x="1383" y="2738"/>    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="34" name="mField">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="35" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="36">    
+    <bendpoint x="906" y="694"/>    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="1"/>  
+  </dependency>  
+  <dependency id="37">    
+    <bendpoint x="1133" y="1784"/>    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="6"/>  
+  </dependency>  
+  <association id="38">    
+    <bendpoint x="623" y="1225"/>    
+    <end type="SOURCE" refId="12" navigable="false">      
+      <attribute id="39" name="mTimer">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="40" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="2" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="41">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="42" name="mTimeSteps">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="43" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="10" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="44">    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="45" name="mPlayer">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="46" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="12" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="47">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="3"/>  
+  </dependency>  
+  <dependency id="48">    
+    <bendpoint x="535" y="1225"/>    
+    <bendpoint x="535" y="1784"/>    
+    <bendpoint x="535" y="2315"/>    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="10"/>  
+  </dependency>  
+  <association id="49">    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="50" name="mGameGrid">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="51" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="52">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="53" name="mTimer">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="54" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="2" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="55">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="5"/>  
+  </dependency>  
+  <dependency id="56">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="1"/>  
+  </dependency>  
+  <dependency id="57">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="8"/>  
+  </dependency>  
+  <association id="58">    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="59" name="mReplay">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="60" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>

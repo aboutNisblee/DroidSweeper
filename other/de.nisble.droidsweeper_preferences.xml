@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<map>
+<int name="count_y" value="8" />
+<int name="count_x" value="6" />
+<int name="difficulty" value="0" />
+<int name="count_bombs" value="6" />
+</map>

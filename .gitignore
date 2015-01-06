@@ -1,0 +1,10 @@
+/.project
+/.cproject
+/.settings
+/.externalToolBuilders
+/.classpath
+/bin
+/gen
+/obj
+/proguard
+
