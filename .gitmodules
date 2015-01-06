@@ -1,0 +1,3 @@
+[submodule "modules/MineSweeperMatrix"]
+	path = modules/MineSweeperMatrix
+	url = https://github.com/mNisblee/MineSweeperMatrix.git

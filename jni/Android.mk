@@ -6,8 +6,8 @@ include $(CLEAR_VARS)
 # Module name. lib and .so is added by script.
 LOCAL_MODULE := msm
 
-MSM_INCLUDE_PATH := $(LOCAL_PATH)/../../MineSweeperMatrix/src
-MSM_SRC_PATH := ../../MineSweeperMatrix/src
+MSM_INCLUDE_PATH := $(LOCAL_PATH)/../modules/MineSweeperMatrix/src
+MSM_SRC_PATH := ../modules/MineSweeperMatrix/src
 
 LOCAL_SRC_FILES := msm-jni.cpp \
 				$(MSM_SRC_PATH)/field.cpp \
